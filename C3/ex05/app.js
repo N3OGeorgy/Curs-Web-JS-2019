@@ -25,7 +25,7 @@ var person = {
 console.log(person.friends);
 console.log('My name is: ' + person.name + ' si stiu ' + person.skills['0'] + ' si ' + person.skills['2']);
 
-var string;
+var string = '';
 var count = person.friends.length;
 
 var i = 0;

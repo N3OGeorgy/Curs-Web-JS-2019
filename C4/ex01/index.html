@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Flow</title>
+</head>
+<body>
+  <p id="change"></p>
+    <script>
+    var value = window.prompt();
+    // console.log('Valoarea este:' + value);
+    if(value%2==0){
+      // alert('Nr este par');
+      document.getElementById("change").innerText = "Nr par!";
+    } else {
+      // alert('Nr este impar');
+      document.getElementById("change").innerText = "Nr impar!";
+    }
+    </script>
+</body>
+</html>

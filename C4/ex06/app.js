@@ -44,17 +44,20 @@ for (var i = 0; i < friendslength; i++) {
 }
 console.log(string1);
 console.log('4---------');
-totianii = 0;
+totalhp = 0;
 for (var i = 0; i < friendslength; i++) {
-  totianii += person.friends[i].age;
+  totalhp += person.friends[i].age;
 }
-console.log(totianii);
+console.log(totalhp);
 console.log('5---------');
-totianii2 = person.age;
+totianii = 0;
+bigsum = 0;
+currentYear = 2019;
 for (var i = 0; i < friendslength; i++) {
-  totianii2 += person.friends[i].age;
+  anii = person.friends[i].age;
+  bigsum += currentYear - anii;
 }
-console.log(totianii2);
+console.log(bigsum);
 console.log('6+7---------');
 var diferentaani = person.age;
 for (var i = 0; i < friendslength; i++) {

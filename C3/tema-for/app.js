@@ -14,16 +14,16 @@ var arr = [{
     name: 'Cosmin'
   }];
 
-var arr = [{
-    name: 'Larry'
-  }, {
-    name: 'Stevan'
-  }];
+// var arr = [{
+//     name: 'Larry'
+//   }, {
+//     name: 'Stevan'
+//   }];
 
-var arr = [{
-    name: 'Larry'
-  }];
-  
+// var arr = [{
+//     name: 'Larry'
+//   }];
+
   console.log('---------varianta 01------------');
   var string = '',
     i = 0;
@@ -38,20 +38,20 @@ var arr = [{
     }
     j = 0;
     string = 'Sunt ' + arr[i].name + ' si am ' + (arr.length - 1) + ((arr.length == 2) ? ' prieten: ' : ' prieteni: ');
-  
+
     for ( ; j < arr.length; j++) {
       var indexModifier = 2;
-  
+
       if (i >= j) {
         indexModifier = 3;
       }
-  
+
       if (i === j) {
         continue;
       }
-  
+
       string += arr[j].name;
-  
+
       if (j >= 0 && j < arr.length - indexModifier) {
         string += ', ';
       } else if (j === arr.length - indexModifier)  {
@@ -76,7 +76,7 @@ var arr = [{
         splicedArrayLength = splicedArray.length;
 
         splicedArray.forEach(function(pers, innerIndex) {
-            string += pers.name; 
+            string += pers.name;
             if (innerIndex >= 0 && innerIndex < splicedArrayLength - 2) {
                 string += ', ';
             } else if (innerIndex === splicedArrayLength - 2) {
@@ -86,7 +86,7 @@ var arr = [{
     }
 console.log(string + '.');
 });
-  
+
 var friendsCount = 0,
     friendsNumber = arr.length - 1;
 var result = [],
@@ -100,14 +100,14 @@ var result = [],
         break;
     }
     string = 'Sunt ' + arr[i].name + ' si am ' + (arr.length - 1) + ((arr.length == 2) ? ' prieten: ' : ' prieteni: ');
-  
+
     friendsCount = 0;
-  
+
     for (j = 0; j < arr.length; j++) {
       if (i === j) {
         continue;
-      }  
-  
+      }
+
       if (friendsCount === 0) {
         string += arr[j].name;
       } else if (friendsCount !== friendsNumber - 1) {
@@ -115,7 +115,7 @@ var result = [],
       } else {
          string +=  ' si ' + arr[j].name;
       }
-  
+
       friendsCount++;
     }
     result.push(string);

@@ -7,15 +7,15 @@
       .row {
         margin-top: 20px;
       }
-
-      .vector1 {
-
-      }
       @keyframes rotate360 {
         to { transform: rotate(360deg); }
       }
-      img {
-        animation: 2s rotate360 infinite linear;
+      .image {
+        /* animation: 2s rotate360 infinite linear; */
+        -moz-animation: rotate360 2s linear infinite;
+        -o-animation: rotate360 2s linear infinite;
+        -webkit-animation: rotate360 2s linear infinite;
+        animation: rotate360 2s linear infinite;
       }
 
     </style>
@@ -30,7 +30,7 @@
             <input type="text" class="form-control" id="Input1" aria-describedby="nr" placeholder="Introduce Numarul">
             <small id="nr" class="form-text text-muted">We'll never share your number with anyone else.</small>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         </form>
       </div>
         <div class="row">

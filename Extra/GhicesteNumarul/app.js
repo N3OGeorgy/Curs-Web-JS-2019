@@ -1,6 +1,5 @@
 const theNumber = Math.floor(Math.random() * 101);
 let gameWon = false;
-console.log(theNumber);
 var my_func = function(event) {
     event.preventDefault();
     let numberInput = parseInt(document.getElementById("Input1").value);

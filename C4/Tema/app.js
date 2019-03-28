@@ -12,12 +12,12 @@ var person = {
   {
     name: 'St',
     surname: 'Se',
-    age: 32
+    age: 31
   },
   {
     name: 'Ca',
     surname: 'Cr',
-    age: 37
+    age: 31
   }]
   };
   var arrayCheck = [];
@@ -30,7 +30,17 @@ var person = {
             if(arrayCheck.find(o => o === (currentPerson + '' + person.friends[j].name))){
                 continue;
             }
-            console.log('Intre ' + currentPerson + ' si ' + person.friends[j].name + ' este o diferenta de ' + Math.abs(currentAge - person.friends[j].age) + ' ani.');
+
+            let diferentaAni = Math.abs(currentAge - person.friends[j].age);
+            switch (true) {
+              case diferentaAni > 0:
+                console.log('Intre ' + currentPerson + ' si ' + person.friends[j].name + ' este o diferenta de ' + diferentaAni + ((diferentaAni === 1) ? ' an.' : ' ani.'));
+                break;
+              case diferentaAni == 0:
+                console.log('Intre ' + currentPerson + ' si ' + person.friends[j].name + ' nu este o diferenta de ani.');
+                break;
+              default:
+            }
         }
         // Bonus: adauga combinatia dupa ce a fost afisata
         arrayCheck.push(person.friends[j].name + '' + currentPerson);

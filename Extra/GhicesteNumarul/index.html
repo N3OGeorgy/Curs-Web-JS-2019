@@ -7,6 +7,17 @@
       .row {
         margin-top: 20px;
       }
+
+      .vector1 {
+
+      }
+      @keyframes rotate360 {
+        to { transform: rotate(360deg); }
+      }
+      img {
+        animation: 2s rotate360 infinite linear;
+      }
+
     </style>
     <title>Ghiceste Numarul</title>
   </head>
@@ -24,6 +35,9 @@
       </div>
         <div class="row">
           <div id="result" style="display:none;" class="alert alert-danger" role="alert"></div>
+        </div>
+        <div class="row">
+          <img id="image" style="display:none;" src="https://placehold.it/200x200/cfc?text=Wooo!" />
         </div>
     </div>
 

@@ -5,6 +5,7 @@ let gameWon = false;
 let gameContinues = true;
 let nrIncercari = 0;
 var maxIncercari = 21;
+let theScore = 0;
 // console.log(theNumber);
 
 function getRandomNumber() {
@@ -19,6 +20,27 @@ function setTheNumber(){
  setTheNumber();
 }
 
+function calculateScore(){
+  let multiplier = 0;
+  switch (true) {
+    case 1 < maxIncercari && maxIncercari >= 10:
+      multiplier = 20;
+      break;
+    case 11 < maxIncercari && maxIncercari >= 15:
+      multiplier = 15;
+      break;
+    case 16 < maxIncercari && maxIncercari >= 20:
+      multiplier = 10;
+      break;
+    default:
+      multiplier = 5;
+  }
+  theScore += (maxIncercari - nrIncercari) * multiplier;
+  console.log(multiplier);
+  console.log(nrIncercari);
+  document.getElementById('yourscore').innerHTML = 'Scorul tau este: ' + theScore;
+}
+
 function incercari() {
   nrIncercari++;
   if(nrIncercari > maxIncercari){
@@ -27,6 +49,7 @@ function incercari() {
   document.getElementById('incercari').style.display = "block";
   document.getElementById('incercari').innerHTML = 'Nr incercari: ' + nrIncercari + ' din ' + maxIncercari;
 }
+
 function changeMaxIncercari(value){
   maxIncercari = value;
   $("#maxIncercari").click();
@@ -75,6 +98,7 @@ function theGame(numberInput) {
       theNumberList.push(theNumber);
       document.getElementById('list').style.display = "block";
       addToList(theNumber);
+      calculateScore();
     break;
     default:
   }
@@ -110,3 +134,9 @@ var form = document.getElementById("numarul");
 form.addEventListener("submit", my_func, true);
 document.getElementById("gamereset").addEventListener("click", gameReset);
 document.getElementById('input').focus();
+document.querySelectorAll('.incercaributtons').forEach(function(button) {
+  button.addEventListener('click', function() {
+      // console.log(this.id.substr(-2));
+   });
+
+})

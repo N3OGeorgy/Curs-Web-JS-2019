@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <style media="screen">
       .row {
         margin-top: 20px;
@@ -20,6 +25,9 @@
       #list {
         display: none;
       }
+      .incercaributtons{
+        margin-top: 5px;
+      }
     </style>
 
     <title>Ghiceste Numarul</title>
@@ -35,6 +43,14 @@
               <small id="nr" class="form-text text-muted">We'll never share your number with anyone else.</small>
             </div>
             <button type="button" id="gamereset" class="btn btn-primary" disabled>Game Reset</button>
+            <button id="maxIncercari" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Incercari</button>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <button type="button" id="incercari10" class="btn btn-primary incercaributtons" onclick="changeMaxIncercari(10)">10</button>
+                <button type="button" id="incercari15" class="btn btn-primary incercaributtons" onclick="changeMaxIncercari(15)">15</button>
+                <button type="button" id="incercari20" class="btn btn-primary incercaributtons" onclick="changeMaxIncercari(20)">20</button>
+              </div>
+            </div>
           </form>
         </div>
         <div class="col">

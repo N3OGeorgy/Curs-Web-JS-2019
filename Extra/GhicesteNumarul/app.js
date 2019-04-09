@@ -4,7 +4,7 @@ var theNumber = setTheNumber();
 let gameWon = false;
 let gameContinues = true;
 let nrIncercari = 0;
-const maxIncercari = 10;
+var maxIncercari = 21;
 // console.log(theNumber);
 
 function getRandomNumber() {
@@ -27,18 +27,28 @@ function incercari() {
   document.getElementById('incercari').style.display = "block";
   document.getElementById('incercari').innerHTML = 'Nr incercari: ' + nrIncercari + ' din ' + maxIncercari;
 }
+function changeMaxIncercari(value){
+  maxIncercari = value;
+  $("#maxIncercari").click();
+  if(document.getElementById('incercari').style.display === 'block'){
+    document.getElementById('incercari').innerHTML = 'Nr incercari: ' + nrIncercari + ' din ' + maxIncercari;
+  }
+}
 
 function gameReset() {
   theNumber = getRandomNumber();
   // console.log(theNumber);
   nrIncercari = 0;
   gameWon = false;
+  gameContinues = true;
   document.getElementById('input').value = '';
   document.getElementById('input').disabled = false;
   document.getElementById('input').focus();
   document.getElementById('incercari').style.display = "none";
   document.getElementById('image').style.display = "none";
   document.getElementById('gamereset').disabled = true;
+  document.getElementById('result').className = "alert alert-success";
+  document.getElementById('result').style.display = "none";
 }
 
 function theGame(numberInput) {
@@ -89,6 +99,7 @@ var my_func = function(event) {
         document.getElementById('input').disabled = true;
         document.getElementById('result').className = "alert alert-danger";
         document.getElementById('result').innerHTML = "Game Over!";
+        document.getElementById('gamereset').disabled = false;
       }
     } else {
       alert('Nu ai introdus un numar corect');

@@ -4,6 +4,10 @@ var person = {
   },
   getAge: function(){
     return 32;
+  },
+  getFullYear: function(){
+    let d = new Date();
+    return d.getFullYear();
   }
 };
 
@@ -13,3 +17,6 @@ function accessor(methodSuffix){
 }
 
 console.log(accessor('Name'));
+console.log(accessor('Age'));
+console.log(accessor('FullYear') - accessor('Age'));
+console.log('Ma numesc ' + accessor('Name') + ' si am ' + accessor('Age') + ' ani.');

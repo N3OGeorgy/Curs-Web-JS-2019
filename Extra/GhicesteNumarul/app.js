@@ -9,7 +9,7 @@ let theScore = 0;
 // console.log(theNumber);
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * 101);
+  return Math.floor(Math.random() * 11);
 }
 
 function setTheNumber(){
@@ -23,15 +23,15 @@ function setTheNumber(){
 function calculateScore(){
   let multiplier = 0;
   switch (true) {
-    case 1 < maxIncercari && maxIncercari >= 10:
+    case 1 < maxIncercari && maxIncercari <= 10:
       multiplier = 20;
-      break;
-    case 11 < maxIncercari && maxIncercari >= 15:
+    break;
+    case 11 < maxIncercari && maxIncercari <= 15:
       multiplier = 15;
-      break;
-    case 16 < maxIncercari && maxIncercari >= 20:
+    break;
+    case 16 < maxIncercari && maxIncercari <= 20:
       multiplier = 10;
-      break;
+    break;
     default:
       multiplier = 5;
   }
@@ -59,7 +59,7 @@ function changeMaxIncercari(value){
 }
 
 function gameReset() {
-  theNumber = getRandomNumber();
+  theNumber = setTheNumber();
   // console.log(theNumber);
   nrIncercari = 0;
   gameWon = false;

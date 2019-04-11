@@ -5,6 +5,35 @@
     <title>Rectangles</title>
 </head>
 <body>
+<script type="text/javascript">
+  var calculateRectangleArea = function(L, l){
+    return L * l;
+  }
 
+  var productie = function(teren, productie_m2){
+    return teren*productie_m2;
+  }
+
+  var hameiperm2 = 25;
+  var teren1 = calculateRectangleArea(250, 100);
+  var teren2 = calculateRectangleArea(350, 200);
+
+  var productieteren1 = productie(teren1, hameiperm2);
+  var productieteren2 = productie(teren2, hameiperm2);
+  console.log('Diferenta este de: ' + (productieteren2 - productieteren1) + ' KG');
+
+  console.log('---------2----------');
+
+  var productieBere = function(cathamei){
+    return cathamei * 0.25;
+  }
+
+  var teren3 = calculateRectangleArea(400, 370);
+  var productieteren3 = productie(teren3, hameiperm2);
+  var bere = productieBere(productieteren3);
+
+  console.log(bere + 'L de bere.');
+
+</script>
 </body>
 </html>
